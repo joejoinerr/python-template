@@ -1,0 +1,42 @@
+[project]
+name = "python-template"
+requires-python = ">= 3.9, < 4"
+
+[tool.poetry]
+name = "python-template"
+version = "0.1.0"
+description = "A Python template for new projects"
+authors = ["Joe Joiner <2454320+joejoinerr@users.noreply.github.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4"
+loguru = "^0.7.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest-asyncio = "^0.23.7"
+pytest = "^8.2.2"
+pre-commit = "^3.7.1"
+ruff = "^0.4.10"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 88
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "C90", "B", "N", "D", "ANN", "TRY", "PD", "RUF200", "UP"]
+ignore = ["E501", "B904", "ANN101", "ANN003"]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"__init__.py" = ["F401", "F403", "E402"]
+"tests/**/*.py" = ["ANN"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
