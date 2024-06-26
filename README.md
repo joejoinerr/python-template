@@ -19,16 +19,15 @@ rm -rf .git
 git init
 ```
 
-3. Install dependencies
+3. Update pyproject.toml with your project details
+4. Install dependencies
 
 ```bash
 poetry install
 ```
 
-4. Install pre-commit hooks
+5. Install pre-commit hooks
 
 ```bash
 poetry run pre-commit install
 ```
-
-5. Update pyproject.toml with your project details
