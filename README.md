@@ -24,3 +24,9 @@ git init
 ```bash
 poetry install
 ```
+
+4. Install pre-commit hooks
+
+```bash
+poetry run pre-commit install
+```
