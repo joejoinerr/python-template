@@ -30,3 +30,5 @@ poetry install
 ```bash
 poetry run pre-commit install
 ```
+
+5. Update pyproject.toml with your project details
