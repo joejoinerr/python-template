@@ -1,6 +1,6 @@
 # Python template
 
-A starter template for Python projects. Includes lots of useful tools and configurations suitable for most Python 
+A starter template for Python projects. Includes lots of useful tools and configurations suitable for most Python
 projects.
 
 ## How to use:
@@ -23,11 +23,11 @@ git init
 4. Install dependencies
 
 ```bash
-poetry install
+uv sync
 ```
 
 5. Install pre-commit hooks
 
 ```bash
-poetry run pre-commit install
+uv run pre-commit install
 ```
