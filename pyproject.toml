@@ -3,7 +3,7 @@ name = "python-template"
 version = "0.1.0"
 description = "A Python template for new projects"
 authors = [{ name = "Joe Joiner", email = "2454320+joejoinerr@users.noreply.github.com" }]
-requires-python = ">= 3.11"
+requires-python = ">= 3.12"
 dependencies = [
     "loguru>=0.7.3",
 ]
