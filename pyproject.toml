@@ -27,8 +27,9 @@ src = ["src"]
 output-format = "concise"
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "C90", "B", "N", "D", "ANN", "TRY", "PD", "RUF200", "UP"]
+select = ["E", "F", "I", "C90", "B", "N", "D", "ANN", "TRY", "PD", "RUF200", "UP", "G"]
 ignore = ["E501", "ANN003"]
+logger-objects = ["loguru.logger"]
 
 [tool.ruff.lint.extend-per-file-ignores]
 "__init__.py" = ["F401", "F403", "E402"]
