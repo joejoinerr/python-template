@@ -1,6 +1,6 @@
 from pathlib import Path
 
-import utils
+{% if is_package %}from {{ package_name }} {% endif %}import utils
 
 
 class TestGetProjectRoot:
