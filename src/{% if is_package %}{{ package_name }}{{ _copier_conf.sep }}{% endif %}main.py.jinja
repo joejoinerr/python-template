@@ -1,7 +1,7 @@
 """Main application entry point."""
 
-import logconfig
-from settings import load_settings
+{% if is_package %}from . {% endif %}import logconfig
+from {% if is_package %}.{% endif %}settings import load_settings
 
 settings = load_settings()
 logconfig.setup()

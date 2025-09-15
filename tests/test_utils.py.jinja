@@ -18,7 +18,7 @@ class TestGetProjectRoot:
 
     def test_returns_correct_root_directory(self, monkeypatch) -> None:
         """Tests that the function returns the correct root directory."""
-        monkeypatch.setattr(utils, "__file__", "/home/test/test-project/src/utils.py")
+        monkeypatch.setattr(utils, "__file__", "/home/test/test-project/src/{% if is_package %}test_package/{% endif %}utils.py")
         expected = Path("/home/test/test-project")
         result = utils.get_project_root()
         assert result == expected
