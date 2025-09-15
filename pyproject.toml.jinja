@@ -1,9 +1,9 @@
 [project]
 name = "{{ package_name }}"
 version = "0.1.0"
-description = "A Python template for new projects"
+description = "{{ project_description }}"
 authors = [
-  { name = "Joe Joiner", email = "2454320+joejoinerr@users.noreply.github.com" },
+  { name = "{{ author_name }}", email = "{{ author_email }}" },
 ]
 requires-python = ">= {% if is_package %}3.11{% else %}3.13{% endif %}"
 dependencies = [

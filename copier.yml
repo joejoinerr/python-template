@@ -26,3 +26,13 @@ project_description:
   type: str
   help: Brief description of what this project does
   placeholder: "A really cool Python project"
+
+author_name:
+  type: str
+  help: Your full name
+  placeholder: "LOCOMOTIVE Agency"
+
+author_email:
+  type: str
+  help: Your email address
+  placeholder: "example@locomotive.agency"
