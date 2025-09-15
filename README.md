@@ -1,33 +1,14 @@
 # Python template
 
-A starter template for Python projects. Includes lots of useful tools and configurations suitable for most Python
-projects.
+A starter template for Python projects. Includes lots of useful tools and
+configurations suitable for most Python projects.
 
-## How to use:
-
-1. Clone this repository
+## How to use
 
 ```bash
-git clone git@github.com:joejoinerr/python-template.git ./my-new-project
+uvx copier copy --trust git@github.com:joejoinerr/python-template.git <your-directory>
 ```
 
-2. Replace git repository
-
-```bash
-cd my-new-project
-rm -rf .git
-git init
-```
-
-3. Update pyproject.toml with your project details
-4. Install dependencies
-
-```bash
-uv sync
-```
-
-5. Install pre-commit hooks
-
-```bash
-uv run pre-commit install
-```
+This will ask you some questions about your project. It will then create the
+project in the directory you specified, make an initial Git commit, install
+dependencies, format the code and install the pre-commit hooks.

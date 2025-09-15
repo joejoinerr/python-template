@@ -3,6 +3,7 @@
 from functools import cache
 from typing import Literal
 
+from pydantic import Field
 from pydantic_settings import BaseSettings
 
 type LogLevel = Literal[
@@ -13,7 +14,7 @@ type LogLevel = Literal[
 class Settings(BaseSettings):
     """Application settings."""
 
-    log_level: LogLevel = "DEBUG"
+    log_level: Annotated[LogLevel, Field(description="Logging level")] = "DEBUG"
 
 
 @cache

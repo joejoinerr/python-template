@@ -1,0 +1,67 @@
+[project]
+name = "{{ package_name }}"
+version = "0.1.0"
+description = "{{ project_description }}"
+authors = [
+  { name = "{{ author_name }}", email = "{{ author_email }}" },
+]
+requires-python = ">= {% if is_package %}3.11{% else %}3.13{% endif %}"
+dependencies = [
+  "loguru>=0.7.3",
+  "pydantic>=2.11.7",
+  "pydantic-settings>=2.10.1",
+]
+
+[dependency-groups]
+dev = [
+  "mypy>=1.15.0",
+  "pre-commit>=4.1.0",
+  "pytest>=8.3.4",
+  "pytest-asyncio>=0.25.3",
+  "ruff>=0.9.7",
+]
+{%- if is_package %}
+
+[build-system]
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"
+{%- endif %}
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 88
+src = ["src"]
+output-format = "concise"
+
+[tool.ruff.lint]
+select = [
+  "E",
+  "F",
+  "I",
+  "C90",
+  "B",
+  "N",
+  "D",
+  "ANN",
+  "TRY",
+  "PD",
+  "RUF200",
+  "UP",
+  "G",
+]
+ignore = ["E501", "ANN003"]
+logger-objects = ["loguru.logger"]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"__init__.py" = ["F401", "F403", "E402"]
+"tests/**/*.py" = ["D", "ANN"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.mccabe]
+# Flag errors (`C901`) whenever the complexity level exceeds 6.
+max-complexity = 6

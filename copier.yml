@@ -1,0 +1,38 @@
+_exclude: ["copier.yaml", "copier.yml", "~*", "*.py[co]", "__pycache__", ".git", ".DS_Store", ".svn", "UNLICENSE", "LICENSE"]
+_tasks:
+  - "uv run ruff format"
+  - "git init"
+  - "uv run pre-commit autoupdate"
+  - "git add ."
+  - "git commit -m 'initial commit'"
+  - "uv run pre-commit install"
+
+project_name:
+  type: str
+  help: What is the name of your project?
+  default: "{{ _folder_name }}"
+
+is_package:
+  type: bool
+  help: Is this a package? (answer no for applications)
+
+package_name:
+  type: str
+  help: Package name
+  default: "{{ project_name | lower | replace(' ', '_') | replace('-', '_') }}"
+  when: "{{ is_package }}"
+
+project_description:
+  type: str
+  help: Brief description of what this project does
+  placeholder: "A really cool Python project"
+
+author_name:
+  type: str
+  help: Your full name
+  placeholder: "LOCOMOTIVE Agency"
+
+author_email:
+  type: str
+  help: Your email address
+  placeholder: "example@locomotive.agency"
