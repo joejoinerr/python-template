@@ -1,8 +1,8 @@
 _exclude: ["copier.yaml", "copier.yml", "~*", "*.py[co]", "__pycache__", ".git", ".DS_Store", ".svn", "UNLICENSE", "LICENSE"]
 _tasks:
   - "uv run ruff format"
-  - "uv run pre-commit autoupdate"
   - "git init"
+  - "uv run pre-commit autoupdate"
   - "git add ."
   - "git commit -m 'initial commit'"
   - "uv run pre-commit install"
