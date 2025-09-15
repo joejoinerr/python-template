@@ -1,24 +1,32 @@
 [project]
-name = "python-template"
+name = "{{ package_name }}"
 version = "0.1.0"
 description = "A Python template for new projects"
-authors = [{ name = "Joe Joiner", email = "2454320+joejoinerr@users.noreply.github.com" }]
+authors = [
+  { name = "Joe Joiner", email = "2454320+joejoinerr@users.noreply.github.com" },
+]
 requires-python = ">= 3.12"
 dependencies = [
-    "loguru>=0.7.3",
-    "pydantic>=2.11.7",
-    "pydantic-settings>=2.10.1",
+  "loguru>=0.7.3",
+  "pydantic>=2.11.7",
+  "pydantic-settings>=2.10.1",
 ]
 
 [dependency-groups]
 dev = [
-    "mypy>=1.15.0",
-    "pre-commit>=4.1.0",
-    "pytest>=8.3.4",
-    "pytest-asyncio>=0.25.3",
-    "ruff>=0.9.7",
+  "mypy>=1.15.0",
+  "pre-commit>=4.1.0",
+  "pytest>=8.3.4",
+  "pytest-asyncio>=0.25.3",
+  "ruff>=0.9.7",
 ]
 
+{%- if is_package %}
+[build-system]
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"
+
+{%- endif %}
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 asyncio_mode = "auto"
@@ -29,7 +37,21 @@ src = ["src"]
 output-format = "concise"
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "C90", "B", "N", "D", "ANN", "TRY", "PD", "RUF200", "UP", "G"]
+select = [
+  "E",
+  "F",
+  "I",
+  "C90",
+  "B",
+  "N",
+  "D",
+  "ANN",
+  "TRY",
+  "PD",
+  "RUF200",
+  "UP",
+  "G",
+]
 ignore = ["E501", "ANN003"]
 logger-objects = ["loguru.logger"]
 
