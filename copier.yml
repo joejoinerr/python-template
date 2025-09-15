@@ -1,3 +1,4 @@
+_exclude: ["copier.yaml", "copier.yml", "~*", "*.py[co]", "__pycache__", ".git", ".DS_Store", ".svn", "UNLICENSE", "LICENSE"]
 _tasks:
   - "uv run ruff format"
   - "git init"
