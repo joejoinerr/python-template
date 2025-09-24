@@ -1,7 +1,7 @@
 [project]
 name = "{{ package_name }}"
 version = "0.1.0"
-description = "{{ project_description }}"
+description = {{ project_description | tojson }}
 authors = [
   { name = "{{ author_name }}", email = "{{ author_email }}" },
 ]
