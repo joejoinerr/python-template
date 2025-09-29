@@ -22,6 +22,17 @@ package_name:
   default: "{{ project_name | lower | replace(' ', '_') | replace('-', '_') }}"
   when: "{{ is_package }}"
 
+min_python_version:
+  type: str
+  help: Minimum supported Python version
+  default: 3.11
+  when: "{{ is_package }}"
+
+dev_python_version:
+  type: str
+  help: Python version used for development
+  default: 3.13
+
 project_description:
   type: str
   help: Brief description of what this project does

@@ -5,7 +5,7 @@ description = {{ project_description | tojson }}
 authors = [
   { name = "{{ author_name }}", email = "{{ author_email }}" },
 ]
-requires-python = ">= {% if is_package %}3.11{% else %}3.13{% endif %}"
+requires-python = ">= {% if is_package %}{{ min_python_version }}{% else %}{{ dev_python_version }}{% endif %}"
 dependencies = [
   "loguru>=0.7.3",
   "pydantic>=2.11.7",
