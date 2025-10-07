@@ -3,6 +3,28 @@
 A starter template for Python projects. Includes lots of useful tools and
 configurations suitable for most Python projects.
 
+## Features
+
+- **Modern Python setup** with `uv` for fast dependency management
+- **Type safety** with comprehensive type hints and modern Python 3.9+ syntax
+- **Code quality tools**:
+  - Pre-commit hooks for automated code formatting and linting
+  - Comprehensive linting and formatting configuration
+- **Project structure**:
+  - Well-organized source layout with proper package structure
+  - Settings management with `pydantic-settings`
+  - Structured logging configuration
+  - Utility functions and testing setup
+- **Development workflow**:
+  - `justfile` for common development tasks
+  - Automated dependency installation and environment setup
+  - Git integration with initial commit and pre-commit hook installation
+- **Best practices**:
+  - Google-style docstrings
+  - Dependency injection patterns for testability
+  - HTTP requests with `httpx`
+  - Secure credential handling
+
 ## How to use
 
 ```bash
