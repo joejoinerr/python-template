@@ -11,6 +11,7 @@ configurations suitable for most Python projects.
   - Pre-commit hooks for automated code formatting and linting
   - Comprehensive linting and formatting configuration
 - **Project structure**:
+  - Choose between a package or application project structure with `src` layout
   - Well-organized source layout with proper package structure
   - Settings management with `pydantic-settings`
   - Structured logging configuration
@@ -22,7 +23,6 @@ configurations suitable for most Python projects.
 - **Best practices**:
   - Google-style docstrings
   - Dependency injection patterns for testability
-  - HTTP requests with `httpx`
   - Secure credential handling
 
 ## How to use
