@@ -53,16 +53,14 @@ select = [
   "G",
   "PLC0415",
 ]
-ignore = ["E501", "ANN003"]
+ignore = ["ANN003"]
 logger-objects = ["loguru.logger"]
 
 [tool.ruff.lint.extend-per-file-ignores]
-"__init__.py" = ["F401", "F403", "E402"]
 "tests/**/*.py" = ["D", "ANN"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
 [tool.ruff.lint.mccabe]
-# Flag errors (`C901`) whenever the complexity level exceeds 6.
 max-complexity = 6
